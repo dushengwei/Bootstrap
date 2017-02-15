@@ -1,0 +1,5 @@
+@liStyle{
+ width:20px;
+ height:30px;
+ lineHeight:30px;
+}

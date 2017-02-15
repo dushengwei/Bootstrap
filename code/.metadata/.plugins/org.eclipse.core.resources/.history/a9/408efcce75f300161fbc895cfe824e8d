@@ -1,0 +1,129 @@
+1. @ 变量
+
+2.作用域
+ @width : 20px; 
+ #homeDiv { 
+   @width : 30px; 
+   #centerDiv{ 
+       width : @width;// 此处应该取最近定义的变量 width 的值 30px 
+              } 
+ } 
+ #leftDiv { 
+     width : @width; // 此处应该取最上面定义的变量 width 的值 20px 
+
+ }
+ 
+ 
+3. 类嵌套Mixins（混入）
+// 定义一个样式选择器
+ .roundedCorners(@radius:5px) { 
+ -moz-border-radius: @radius; 
+ -webkit-border-radius: @radius; 
+ border-radius: @radius; 
+ } 
+ // 在另外的样式选择器中使用
+ #header { 
+ .roundedCorners; 
+ } 
+ #footer { 
+ .roundedCorners(10px); 
+ }
+ 
+4. Parametric Mixins（混入参数
+ // 定义一个样式选择器
+ .borderRadius(@radius){ 
+ -moz-border-radius: @radius; 
+ -webkit-border-radius: @radius; 
+ border-radius: @radius; 
+ } 
+ // 使用已定义的样式选择器
+ #header { 
+ .borderRadius(10px); // 把 10px 作为参数传递给样式选择器
+ } 
+ .btn { 
+ .borderRadius(3px);// // 把 3px 作为参数传递给样式选择器
+
+ }
+ 
+5.arguments
+ .boxShadow(@x:0,@y:0,@blur:1px,@color:#000){ 
+ -moz-box-shadow: @arguments; 
+ -webkit-box-shadow: @arguments; 
+ box-shadow: @arguments; 
+ } 
+ #header { 
+ .boxShadow(2px,2px,3px,#f36); 
+ }
+ 
+ 6.命名空间
+  #mynamespace { 
+ .home {...} 
+ .user {...} 
+ }
+ #mynamespace > .user
+ 
+ 
+ 7.嵌套
+ 清单 16. HTML 片段
+ <div id="home"> 
+ <div id="top">top</div> 
+ <div id="center"> 
+ <div id="left">left</div> 
+ <div id="right">right</div> 
+ </div> 
+ </div>
+清单 17. LESS 文件
+ #home{ 
+   color : blue; 
+   width : 600px; 
+   height : 500px; 
+   border:outset; 
+   #top{ 
+        border:outset; 
+        width : 90%; 
+   } 
+   #center{ 
+        border:outset; 
+        height : 300px; 
+        width : 90%; 
+        #left{ 
+          border:outset; 
+          float : left; 
+  width : 40%; 
+        } 
+        #right{ 
+          border:outset; 
+          float : left; 
+  width : 40%; 
+        } 
+    } 
+ }
+ 
+ 
+ 8：&
+ a { 
+ color: red; 
+ text-decoration: none; 
+ &:hover {// 有 & 时解析的是同一个元素或此元素的伪类，没有 & 解析是后代元素
+  color: black; 
+  text-decoration: underline; 
+ } 
+ }
+ 
+ 9.运算和函数
+  @init: #111111; 
+ @transition: @init*2; 
+ .switchColor { 
+ color: @transition; 
+ }
+ 
+ 
+ 颜色操作
+ lighten(@color, 10%); // return a color which is 10% *lighter* than @color 
+ darken(@color, 10%); // return a color which is 10% *darker* than @color 
+ saturate(@color, 10%); // return a color 10% *more* saturated than @color 
+ desaturate(@color, 10%);// return a color 10% *less* saturated than @color 
+ fadein(@color, 10%); // return a color 10% *less* transparent than @color 
+ fadeout(@color, 10%); // return a color 10% *more* transparent than @color 
+ spin(@color, 10); // return a color with a 10 degree larger in hue than @color 
+ spin(@color, -10); 

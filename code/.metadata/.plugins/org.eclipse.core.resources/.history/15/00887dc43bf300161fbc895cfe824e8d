@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>入门Start</title>
+<!--1.less编译css文件   2.支持cdn文件加速 3. Normalize 来建立跨浏览器的一致性 -->
+<!-- 设置宽度为设备宽度,初始化记载无缩放   user-scalable=no"禁止缩放-->
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!--引入BootStrap  -->
+<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css" />
+
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+<!-- html5 简单标签兼容ie9一下 -->
+<!--[if lt IE 9]>
+  <script type="text/javascript" src="lib/js/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif] -->
+
+<script type="text/javascript" src="lib/js/jquery.js"></script>
+<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row"><!--  -->
+			<div class="col-"></div>
+		</div>
+	</div>
+</body>
+</html>

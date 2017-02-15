@@ -1,0 +1,7 @@
+@width:12px;
+@height:14px;
+@border-color:red;
+.one{
+border:solid 1px @border-color;
+width:@width;
+}

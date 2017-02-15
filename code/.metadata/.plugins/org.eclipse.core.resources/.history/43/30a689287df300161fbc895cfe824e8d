@@ -1,0 +1,26 @@
+.liStyle(){
+ width:70px;
+ height:30px;
+ lineHeight:30px;
+ float:left;
+ border:solid 1px red;
+ list-style-type:none;
+}
+
+.nav{
+width:100%;
+height:30px;
+position:relative;
+.left{
+width:
+li{
+ .liStyle;
+}
+}
+.right{
+ position:absolute;
+ left:700px;
+ li{
+ .liStyle;}
+} 
+}

@@ -1,0 +1,32 @@
+@ 变量
+
+作用域
+ @width : 20px; 
+ #homeDiv { 
+   @width : 30px; 
+   #centerDiv{ 
+       width : @width;// 此处应该取最近定义的变量 width 的值 30px 
+              } 
+ } 
+ #leftDiv { 
+     width : @width; // 此处应该取最上面定义的变量 width 的值 20px 
+
+ }
+ 
+ 
+类嵌套Mixins（混入）
+// 定义一个样式选择器
+ .roundedCorners(@radius:5px) { 
+ -moz-border-radius: @radius; 
+ -webkit-border-radius: @radius; 
+ border-radius: @radius; 
+ } 
+ // 在另外的样式选择器中使用
+ #header { 
+ .roundedCorners; 
+ } 
+ #footer { 
+ .roundedCorners(10px); 
+ }
+ 
+ Parametric Mixins（混入参数

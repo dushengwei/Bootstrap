@@ -1,0 +1,11 @@
+.liStyle(){
+ width:20px;
+ height:30px;
+ lineHeight:30px;
+ float:left;
+ border:solid 1px red;
+}
+
+.right{
+ .liStyle;
+}

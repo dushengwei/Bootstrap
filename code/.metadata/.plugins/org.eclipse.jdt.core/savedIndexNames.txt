@@ -1,0 +1,2 @@
+INDEX VERSION 1.126+J:\bootStrap\code\.metadata\.plugins\org.eclipse.jdt.core
+3375603220.index
